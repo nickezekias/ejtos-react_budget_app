@@ -38,3 +38,28 @@ code {
 .currency-select option:not(:checked) {
     color: black;
 }
+
+.ei_btn {
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    outline: none;
+    border: none;
+    border-radius: 100%;
+    color: white;
+}
+
+.ei_btn.inc {
+    background-color: green;
+}
+
+.ei_btn.dec {
+    background-color: red;
+}
