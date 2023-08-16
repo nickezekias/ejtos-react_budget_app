@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../context/AppContext';
 const Currency = () => {
-    const DEFAULT_CURRENCY = '£';
-    const [currency, setCurrency] = useState(DEFAULT_CURRENCY);
+    const { currency, dispatch } = useContext(AppContext);
     const onCurrencyChange = (val) => {
-        setCurrency(val);
+        dispatch({ type: "CHG_CURRENCY", payload: val })
     }
     return (
         <div class="alert alert-secondary">
             <div class="currency-container">
                 <label for="currencySelect">Currency</label>
-                <select id="currencySelect" class="currency-select" value={currency}>
+                <select id="currencySelect" class="currency-select" value={currency} onChange={(event) => onCurrencyChange(event.target.value)}>
                     <option value="$" name="dollar">$ Dollar</option>
                     <option value="£" name="pound">£ Pound</option>
                     <option value="€" name="euro">€ Euro</option>
